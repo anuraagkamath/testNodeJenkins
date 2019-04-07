@@ -12,5 +12,10 @@ pipeline {
         bat 'docker-compose up -d'
       }
     }
+    stage('end') {
+      steps {
+        mail(subject: 'built', body: 'built', to: 'anuraag@capiot.com')
+      }
+    }
   }
 }
