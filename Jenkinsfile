@@ -5,7 +5,8 @@ pipeline {
       steps {
         echo 'alpha beta gamma'
         bat 'npm install'
-        bat 'node test.js'
+        bat 'docker build -t test1 .'
+        bat 'docker run -d -p 3000:3000 test1'
       }
     }
   }
